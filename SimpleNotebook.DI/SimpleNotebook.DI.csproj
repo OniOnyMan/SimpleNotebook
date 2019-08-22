@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C59E210A-F490-47B8-BBE0-77E9BB33ABD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleNotebook.DI</RootNamespace>
+    <AssemblyName>SimpleNotebook.DI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleNotebook.BLL.Abstract\SimpleNotebook.BLL.Abstract.csproj">
+      <Project>{d29f7fd2-b126-49a9-a495-5c89a0284f45}</Project>
+      <Name>SimpleNotebook.BLL.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNotebook.BLL.Default\SimpleNotebook.BLL.Default.csproj">
+      <Project>{1aadc78f-d69f-4500-a8dc-252e744df026}</Project>
+      <Name>SimpleNotebook.BLL.Default</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNotebook.DAL.Abstract\SimpleNotebook.DAL.Abstract.csproj">
+      <Project>{ecee8541-c6c5-40a3-99a3-52decbbda49d}</Project>
+      <Name>SimpleNotebook.DAL.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNotebook.DAL.Xml\SimpleNotebook.DAL.Xml.csproj">
+      <Project>{57fde47a-3fbc-47d4-a61c-1e99c1a5757b}</Project>
+      <Name>SimpleNotebook.DAL.Xml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
